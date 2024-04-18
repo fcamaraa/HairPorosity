@@ -1,0 +1,200 @@
+.nav-link {
+    transition: background-color 0.3s, color 0.3s !important;
+    font-size: 20px;
+
+}
+.nav-link:hover{
+    background-color: #777676; /* Light gray background on hover/focus */
+    color: #6e6b70; /* Bootstrap primary blue for text on hover/focus */
+    text-decoration: none; /* No underline */
+    text-align: center;
+    border-radius: 25px;
+    
+}
+.nav{
+    background-color: rgb(204,180,164);
+    padding: 2%;
+    margin-top: -1%;
+    color: black;
+}
+.header{
+    color: white;
+    text-align: center;
+
+}
+.footer{
+    background-color: rgb(204,180,156);
+    color:black;
+    padding: .9%;
+
+}
+
+.text{
+   line-height: .5in;
+    text-align: center;
+}
+.title1{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.mainButton:link, 
+.mainButton:visited{
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    border: 1px solid;
+    border-radius: 1000px;
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
+    background-color: rgb(108,92,80);
+    text-align: center;
+
+}
+.mainButton:hover{
+    transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+}
+.mainButton:active {
+    transform: translateY(-3px);
+   }
+   
+.mainButton::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all .3s;
+   }
+   
+.mainButton:hover::after {
+    background-color: white;
+    transform: scaleX(1.4) scaleY(1.5);
+    opacity: 0;
+   }
+
+.leftContain{
+    background-color: rgb(204,180,156);
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+
+}
+.image{
+    border-radius: 25px;
+}
+
+.nav-link, .footer a {
+    color: white !important; /* Ensuring it overrides other styles */
+    transition: background-color 0.3s, color 0.3s;
+}
+.nav-link:focus {
+    background-color: #f8f9fa; /* Light gray background on hover/focus */
+    color: #3f3d40; /* Changing this if you need a different hover color */
+    text-decoration: none; /* No underline */
+}
+
+.navbar {
+    background-color: rgb(204,180,164); /* Adjust if needed */
+    color: white;
+}
+
+.footer {
+    background-color: rgb(204,180,156);
+    color: white; /* Ensuring text in the footer is white */
+    padding: 0.9%;
+}
+
+.footer a {
+    color: white !important; /* Making sure this is explicitly set */
+    text-decoration: none; /* Optional: Removes underline from links */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Optional: Only underline on hover */
+}
+
+/* Additional styles to ensure clarity and consistency */
+.header, .titleTemp {
+    color: white;
+    font-size: 18px;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important; /* Force white color on all navigation texts */
+}
+
+.titleTemp{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 18px;
+}
+.need{
+    text-align: center;
+}
+.textContent{
+    text-align: center;
+}
+.textBlock{
+    background-color: rgb(204,180,156);
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+}
+.testTitle{
+    background-color: rgb(106, 96, 89);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: (108,92,80);
+    text-align: center;
+}
+.start{
+    
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    background: #FCFCFD;
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    height: 48px;
+    padding: 0 32px;
+    font-size: 18px;
+    border-radius: 6px;
+    color: #36395a;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+}
+.start:hover {
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    transform: translateY(-2px);
+}
+.start:active{
+    box-shadow: inset 0px 3px 7px #d6d6e7;
+    transform: translateY(2px);
+}
+
+.dropzone {
+    width: 200px;
+    height: 300px;
+    border: 2px dashed #ccc;
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: center;
+}
+
+.draggable {
+    padding: 8px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin: 5px;
+}
+

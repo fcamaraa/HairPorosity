@@ -1,0 +1,18 @@
+{% extends 'template.html' %}
+{% block content %}
+<div class="question">
+    <h3>Which Hair Porosity is best suited to use humectants, lighter oils, and penetrating ingredients?</h3>
+    <form method="POST" action="{{ url_for('quizQuestion3') }}">
+        <input type="radio" id="low" name="porosity" value="low">
+        <label for="low">Low Porosity</label><br>
+        <input type="radio" id="medium" name="porosity" value="medium">
+        <label for="medium">Medium Porosity</label><br>
+        <input type="radio" id="high" name="porosity" value="high">
+        <label for="high">High Porosity</label><br>
+        <button id="submitBtn" data-next-url="{{ url_for('quizQuestion3') }}" class="btn btn-primary">Submit</button>
+
+
+    </form>
+    
+</div>
+{% endblock %}
