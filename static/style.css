@@ -1,0 +1,371 @@
+body, html {
+    height: 100%; /* Make sure the body takes at least the height of the viewport */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Helps manage layout with sticky footer */
+}
+
+.content {
+    flex: 1 0 auto; /* Ensures that content expands to fill the space, pushing the footer down */
+    padding-bottom: 100px; /* Increase bottom padding to ensure space for footer */
+}
+
+
+.nav-link {
+    transition: background-color 0.3s, color 0.3s !important;
+    font-size: 20px;
+
+}
+.nav-link:hover{
+    background-color: #777676; /* Light gray background on hover/focus */
+    color: #6e6b70; /* Bootstrap primary blue for text on hover/focus */
+    text-decoration: none; /* No underline */
+    text-align: center;
+    border-radius: 25px;
+    
+}
+.nav{
+    background-color: rgb(204,180,164);
+    padding: 1%;
+    margin-top: -1%;
+    color: black;
+}
+.header{
+    color: white;
+    text-align: center;
+    font-size: 22px;
+
+}
+
+
+.text{
+   line-height: .38in;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+.title1{
+    text-align: center;
+    color: lightgray;
+    font-size: 20px;
+
+    background-color: rgb(106, 96, 89);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: (108,92,80);
+    text-align: center;
+    
+}
+.mainButton:link, 
+.mainButton:visited{
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    border: 1px solid;
+    border-radius: 1000px;
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
+    background-color: rgb(141, 129, 120);
+    text-align: center;
+    font-size: 18px;
+
+}
+.mainButton:hover{
+    transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+}
+.mainButton:active {
+    transform: translateY(-3px);
+   }
+   
+.mainButton::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all .3s;
+   }
+   
+.mainButton:hover::after {
+    background-color: white;
+    transform: scaleX(1.4) scaleY(1.5);
+    opacity: 0;
+   }
+
+.leftContain{
+    background-color: rgb(204,180,156);
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+
+}
+.image{
+    border-radius: 25px;
+}
+
+.nav-link, .footer a {
+    color: white !important; /* Ensuring it overrides other styles */
+    transition: background-color 0.3s, color 0.3s;
+}
+.nav-link:focus {
+    background-color: #f8f9fa; /* Light gray background on hover/focus */
+    color: #3f3d40; /* Changing this if you need a different hover color */
+    text-decoration: none; /* No underline */
+}
+
+.navbar {
+    background-color: rgb(204,180,164); /* Adjust if needed */
+    color: white;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.footer {
+    background-color: rgb(204, 180, 164);
+    color: black;
+    padding: 10px 0; /* Updated for consistent padding */
+    width: 100%; /* Ensure it spans the full width */
+    position: fixed; /* Fix position to the bottom */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    
+}
+.footer a {
+    color: white !important; /* Making sure this is explicitly set */
+    text-decoration: none; /* Optional: Removes underline from links */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Optional: Only underline on hover */
+}
+
+/* Additional styles to ensure clarity and consistency */
+.header, .titleTemp {
+    color: white;
+    font-size: 18px;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important; /* Force white color on all navigation texts */
+}
+
+.titleTemp{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 22px !important;
+    margin-left: 1%;
+}
+.need{
+    text-align: center;
+}
+.textContent{
+    text-align: center;
+}
+.textBlock{
+    background-color: rgb(204,180,156);
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+}
+.testTitle{
+    background-color: rgb(106, 96, 89);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: (108,92,80);
+    text-align: center;
+    color: lightgray;
+}
+.testTitles{
+    background-color: rgb(243, 243, 243);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: (108,92,80);
+    text-align: center;
+    color: darkgray;
+}
+.start{
+    
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    background: #FCFCFD;
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    height: 48px;
+    padding: 0 32px;
+    font-size: 18px;
+    border-radius: 6px;
+    color: #36395a;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    text-decoration: none;
+}
+.start:hover {
+    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
+    transform: translateY(-2px);
+}
+.start:active{
+    box-shadow: inset 0px 3px 7px #d6d6e7;
+    transform: translateY(2px);
+}
+
+.dropzone {
+    width: 200px;
+    height: 300px;
+    border: 2px dashed #ccc;
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: center;
+}
+
+.draggable {
+    padding: 8px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.title{
+    color: darkgray;
+    
+}
+
+
+.center{
+    text-align: center;
+  
+}
+.vidText{
+    text-align: center;
+    padding-right: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    background-color:rgb(204,180,156);
+    border-radius: 25px;
+    padding: 20px;
+    height: fit-content;
+   
+}
+.textFC{
+    color: white;
+}
+.textFC{
+    padding-right: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    background-color:rgb(204,180,156);
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 18px;
+   
+}
+.video{
+    border-radius: 25px;
+}
+.navigation-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.arrow {
+    text-decoration: none;
+    color: #0056b3; /* Change color based on your site's theme */
+    font-weight: bold;
+}
+
+.arrow:hover {
+    text-decoration: underline;
+}
+.center{
+    text-align: center
+}
+.dropped {
+    border: 2px solid green; 
+}
+.dropzone {
+    min-height: 50px;  
+    border: 1px dashed #ccc;
+}
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+    position: relative; /* Ensures that the progress bar does not overlap with other content */
+    height: 20px; /* Adjusts the height of the progress bar */
+}
+
+#myBar {
+    width: 33%; /* Adjust according to the progress state */
+    height: 100%;
+    background-color: #4CAF50;
+}
+/* Additional styling for feedback to ensure it is visible and does not overlap with the footer */
+.feedback {
+    position: top; /* Ensures feedback is positioned correctly within the layout */
+    margin-bottom: 20px; /* Adds space below the feedback before the footer begins */
+    padding: 10px;
+    background-color: #ffffff; /* Gives feedback a distinct background */
+    border-radius: 5px; /* Optional: adds rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds subtle shadow for better visibility */
+    color: #333; /* Text color for feedback */
+}
+.title2{
+    text-align: right;
+    color: white;
+    font-size: 20px;
+    
+    background-color: rgb(204,180,156);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: (108,92,80);
+    text-align: center;
+}
+button {
+    font-family: inherit;
+    border: none;
+    outline: 1px dotted rgb(37, 37, 37);
+    outline-offset: -4px;
+    background: hsl(0deg 0% 75%);
+    box-shadow: inset -1px -1px #292929, inset 1px 1px #fff, inset -2px -2px rgb(158, 158, 158), inset 2px 2px #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 30px;
+  }
+  
+  button:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
+  }
+  .feedback {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+.correct-feedback {
+    background-color: #28a745;  /* Green for correct */
+}
+.incorrect-feedback {
+    background-color: #dc3545;  /* Red for incorrect */}
+
+.button-spacing {
+        margin-bottom: 50px; /* Adjust this value based on your specific needs */
+    }
+.resultsFeeback{
+    text-align: left;
+}

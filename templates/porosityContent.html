@@ -1,0 +1,35 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="item-details">
+        <div class="title">
+            <h2><strong>{{ item.title }}</strong></h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 vidText">
+                <p class="text">{{ item.description }}</p>
+                <hr>
+                <p><em>OPTIONAL: Watch the video below for haircare tips!</em></p>
+                <iframe class="video" src="{{ item.video }}" width="100%" height="281" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+            </div>
+            <div class="col-md-6 center">
+                <img class="image" src="{{ item.image }}" alt="{{ item.title }}" style="width: 55%; height:fixed; max-width: 100%;">
+                <br><br>
+                {% if item.id == "3" %} 
+                    <a href="/learn" class="mainButton">Learn Your Porosity!</a>
+                    <br>
+                {% endif %}
+                <div class="navigation-arrows">
+                    {% if prev_id is not none %}
+                        <a href="{{ url_for('view', id=prev_id) }}" class="arrow left-arrow">&#8592; Previous</a>
+                    {% endif %}
+                    {% if next_id is not none %}
+                        <a href="{{ url_for('view', id=next_id) }}" class="arrow right-arrow">Next &#8594;</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
