@@ -1,0 +1,36 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="testTitle results">
+    <h2>Your Quiz Results</h2>
+</div>
+<br>
+<div class="row justify-content-around">
+    <div class="col-md-5 textFC">
+        <div class="text">
+            <div class="title1"><h1>Your Final Score: {{ score|round }}%</h1></div> <br>
+            <img class='image' src="https://themestizamuse.com/wp-content/uploads/2023/03/Hair-Porosity-101-The-Ultimate-Guide.png" class="img-fluid" alt="Hair Porosity Guide" width="100%">
+            <br>
+            <br>
+            <a href="{{ url_for('start_quiz') }}" class="mainButton">Retake Quiz</a>
+        </div>
+    </div>
+    <div class="col-md-6 textFC">
+        <div class="title1"><h3>Feedback:</h3></div>
+        <div class="resultsFeedback">
+            <ol>
+                {% for item in feedbacks %}
+                <li>
+                    <strong>Question:</strong> {{ item.question | safe }}
+                    <br>
+                    <strong>Feedback:</strong> {{ item.feedback | safe }}
+                    <br>
+                </li>
+                {% endfor %}
+            </ol>
+            
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}

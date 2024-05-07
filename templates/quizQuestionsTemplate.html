@@ -1,0 +1,72 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 title1">
+            <h1>Question {{ current_index + 1 }} of {{ total_questions }}</h1>
+        </div>
+        <div class="col-md-6 title2">
+            <h2>Current score: {{ score|default(0)|round }}%</h2>
+        </div>
+    </div>
+    
+    <h1>{{ question.question }}</h1>
+    <form method="POST" action="{{ url_for('show_question') }}">
+        {% if question.type == 'mcq' %}
+            {% for option in question.options %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="answer" id="{{ option }}" value="{{ option }}">
+                    <label class="form-check-label" for="{{ option }}">
+                        {{ option }}
+                    </label>
+                </div>
+            {% endfor %}
+        {% elif question.type == 'drag-drop' %}
+            <div class="question">
+                <div class="dropzone-container">
+                    <div id="dropzone1" class="dropzone" style="{{ 'background-color:green;' if correct_image1 else 'background-color:red;' if answered else 'background-color:initial;' }}">
+                        <img src="https://i.ibb.co/7t8D8LQ/Screenshot-2024-04-17-at-8-43-23-PM.png" alt="Low Porosity Image">
+                        
+                    </div>
+                    <div id="dropzone2" class="dropzone" style="{{ 'background-color:green;' if correct_image2 else 'background-color:red;' if answered else 'background-color:initial;' }}">
+                        <img src="https://i.ibb.co/f4JnT0v/Screenshot-2024-04-17-at-8-43-29-PM.png" alt="Medium Porosity Image">
+                        
+                    </div>
+                    <div id="dropzone3" class="dropzone" style="{{ 'background-color:green;' if correct_image3 else 'background-color:red;' if answered else 'background-color:initial;' }}">
+                        <img src="https://i.ibb.co/bJ4k3P5/Screenshot-2024-04-17-at-8-43-36-PM.png" alt="High Porosity Image">
+                        
+                    </div>
+                </div>
+                <div class="labels">
+                    <div id="low" draggable="true" class="draggable">Low Porosity</div>
+                    <div id="medium" draggable="true" class="draggable">Medium Porosity</div>
+                    <div id="high" draggable="true" class="draggable">High Porosity</div>
+                </div>
+                <input type="hidden" id="input-dropzone1" name="image1">
+                <input type="hidden" id="input-dropzone2" name="image2">
+                <input type="hidden" id="input-dropzone3" name="image3">
+            </div>
+        {% endif %}
+        <button type="submit" class="button button-spacing">Submit</button>
+    </form>
+
+    {% if feedback %}
+    <div class="alert {{ 'alert-success' if 'Correct!' in feedback else 'alert-danger' }}">
+        {{ feedback|safe }}
+    </div>
+    {% endif %}
+
+    {% if answered %}
+    {% if current_index < total_questions - 1 %}
+        <form action="{{ url_for('next_question') }}" method="post">
+            <button type="submit" class="button button-spacing">Next Question</button>
+        </form>
+    {% else %}
+        <form action="{{ url_for('quiz_results') }}" method="post">
+            <button type="submit" class="button button-spacing">Finish Quiz</button>
+        </form>
+    {% endif %}
+{% endif %}
+</div>
+{% endblock %}

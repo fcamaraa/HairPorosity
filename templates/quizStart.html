@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="testTitle">
+<h2>Test Your Knowledge</h2>
+</div>
+<br>
+<br>
+<div class="textBlock">
+    <div class="text">
+        <p>Answer the following questions utilizing information learned from browsing this webpage. Reference previous tabs to refresh understanding.</p>
+   
+        <img src="https://i.ibb.co/5Y6PGbv/Porosity-image3-be3ea098-6f76-4dad-ad0c-9ff493dd77f2-removebg-preview.png" alt="Porosity-image3-be3ea098-6f76-4dad-ad0c-9ff493dd77f2-removebg-preview" class="img-fluid" width='70%'>
+    </div>
+
+    <br>
+    <a href="{{ url_for('reset_quiz') }}" class="start mainButton">Start Quiz</a>
+
+</div>
+<br>
+
+{% endblock %}
+
